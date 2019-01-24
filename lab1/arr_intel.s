@@ -27,23 +27,23 @@ LBB0_1:                                 ## =>This Inner Loop Header: Depth=1
 	cmp	dword ptr [rbp - 40], 5
 	jge	LBB0_4
 ## %bb.2:                               ##   in Loop: Header=BB0_1 Depth=1
-    movsxd	rax, dword ptr [rbp - 40] ; rax <- 0
-    mov	ecx, dword ptr [rbp + 4*rax - 32] ; ecx <- 1
-    add	ecx, 1 ; ecx <- 2
-    mov	dword ptr [rbp + 4*rax - 32], ecx ; [rbp + 4*rax - 32] <- 2
+    movsxd	rax, dword ptr [rbp - 40] ; rax <- 4
+    mov	ecx, dword ptr [rbp + 4*rax - 32] ; ecx <- 5
+    add	ecx, 1 ; ecx <- 6
+    mov	dword ptr [rbp + 4*rax - 32], ecx ; [rbp + 4*rax - 32] <- 6
 ## %bb.3:                               ##   in Loop: Header=BB0_1 Depth=1
     mov	eax, dword ptr [rbp - 40] ; eax <- 0
     add	eax, 1 ; eax <- 1
     mov	dword ptr [rbp - 40], eax ; [rbp - 40] <- 0
 	jmp	LBB0_1
 LBB0_4:
-	mov	rax, qword ptr [rip + ___stack_chk_guard@GOTPCREL]
-	mov	rax, qword ptr [rax]
-	mov	rcx, qword ptr [rbp - 8]
+	mov	rax, qword ptr [rip + ___stack_chk_guard@GOTPCREL] ; rax <- 1837787782297027
+	mov	rax, qword ptr [rax] ; rax <- 1357787782297756453
+	mov	rcx, qword ptr [rbp - 8] ; rax <- 1357787782297756453r
 	cmp	rax, rcx
 	jne	LBB0_6
 ## %bb.5:
-	xor	eax, eax
+	xor	eax, eax ; eax <- 0
 	add	rsp, 48
     pop	rbp ; rbp <- 27175869187
 	ret
