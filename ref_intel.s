@@ -22,10 +22,10 @@ LBB0_1:                                 ## =>This Inner Loop Header: Depth=1
 	cmp	dword ptr [rbp - 20], 5
 	jge	LBB0_4
 ## %bb.2:                               ##   in Loop: Header=BB0_1 Depth=1
-    mov	eax, dword ptr [rbp - 20] ; eax <- 0
+    mov	eax, dword ptr [rbp - 20] ; eax <- 4
     mov	rcx, qword ptr [rbp - 16] ; rcx <- 4299161600
-    movsxd	rdx, dword ptr [rbp - 20] ; rdx <- 0
-    mov	dword ptr [rcx + 4*rdx], eax ; [rcx + 4*rdx] <- 0
+    movsxd	rdx, dword ptr [rbp - 20] ; rdx <- 4
+    mov	dword ptr [rcx + 4*rdx], eax ; [rcx + 4*rdx] <- 4
 ## %bb.3:                               ##   in Loop: Header=BB0_1 Depth=1
     mov	eax, dword ptr [rbp - 20] ; eax <- 4
     add	eax, 1 ; eax <- 5
