@@ -27,25 +27,25 @@ LBB0_1:                                 ## =>This Inner Loop Header: Depth=1
 	cmp	dword ptr [rbp - 72], 5
 	jge	LBB0_4
 ## %bb.2:                               ##   in Loop: Header=BB0_1 Depth=1
-    movsxd	rax, dword ptr [rbp - 72] ; rax <- 0
-    mov	ecx, dword ptr [rbp + 4*rax - 32] ; ecx <- 1
-    movsxd	rax, dword ptr [rbp - 72] ; rax <- 0
-    mov	dword ptr [rbp + 4*rax - 64], ecx ; [rbp + 4*rax - 64] <- 1
+    movsxd	rax, dword ptr [rbp - 72] ; rax <- 4
+    mov	ecx, dword ptr [rbp + 4*rax - 32] ; ecx <- 5
+    movsxd	rax, dword ptr [rbp - 72] ; rax <- 4
+    mov	dword ptr [rbp + 4*rax - 64], ecx ; [rbp + 4*rax - 64] <- 5
 ## %bb.3:                               ##   in Loop: Header=BB0_1 Depth=1
-    mov	eax, dword ptr [rbp - 72] ; eax <- 0
-    add	eax, 1 ; eax <- 1
-    mov	dword ptr [rbp - 72], eax ; [rbp - 72] <-  1
+    mov	eax, dword ptr [rbp - 72] ; eax <- 4
+    add	eax, 1 ; eax <- 5
+    mov	dword ptr [rbp - 72], eax ; [rbp - 72] <-  5
 	jmp	LBB0_1
 LBB0_4:
-	mov	rax, qword ptr [rip + ___stack_chk_guard@GOTPCREL]
-	mov	rax, qword ptr [rax]
-	mov	rcx, qword ptr [rbp - 8]
+	mov	rax, qword ptr [rip + ___stack_chk_guard@GOTPCREL] ; rax <- 40735578013808
+	mov	rax, qword ptr [rax] ; rax <- 2079473817093931259
+	mov	rcx, qword ptr [rbp - 8] ; rcx <- 2079473817093931259
 	cmp	rax, rcx
 	jne	LBB0_6
 ## %bb.5:
-	xor	eax, eax
-	add	rsp, 80
-	pop	rbp
+	xor	eax, eax ; eax <- 0
+	add	rsp, 80 ; rsp <- 140732920756896
+	pop	rbp ; rbp <- 140732920756896
 	ret
 LBB0_6:
 	call	___stack_chk_fail
